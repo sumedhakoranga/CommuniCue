@@ -1,0 +1,16 @@
+{
+  "name": "nodeserver",
+  "version": "1.0.0",
+  "description": "node server for communication application communicue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve":"nodemon index.js"
+  },
+  "author": "sumedha",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.3",
+    "socket.io": "^4.7.4"
+  }
+}
