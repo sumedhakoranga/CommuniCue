@@ -9,18 +9,18 @@ const append = (message, position) =>{
   messageElement.innerText = message;
   messageElement.classList.add('message')
   messageElement.classList.add(position);
-  messageContainer.append(messageElement)
+  messageContainer.append(messageElement);
 }
 
-const name = prompt("Enter your name to join");
-socket.emit('new-user-joined', name);
+const userName = prompt("Enter your name to join");
+socket.emit('new-user-joined', {userName});
 
-socket.on('user-joined', name =>{
-  append(`${name} joined the chat`, 'right')
+socket.on('user-joined', data =>{
+  append(`${data.userName} joined the chat`, 'right')
 
 })
 
 socket.on('receive', data => {
-  append(`${data.message}: ${data.user}`, 'left')
+  append(`${data.message}: ${data.userName}`, 'left')
 
 })
